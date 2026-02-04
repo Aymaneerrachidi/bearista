@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, TrendingDown } from 'lucide-react';
 
@@ -37,13 +38,17 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '300ms' }}>
-            <Button variant="hero" size="xl" className="group">
-              Start Your Application
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            <Button variant="heroSecondary" size="xl">
-              Read Our Story
-            </Button>
+            <Link to="/careers">
+              <Button variant="hero" size="xl" className="group">
+                Start Your Application
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </Link>
+            <a href="#story">
+              <Button variant="heroSecondary" size="xl">
+                Read Our Story
+              </Button>
+            </a>
           </div>
 
           {/* Stats */}
