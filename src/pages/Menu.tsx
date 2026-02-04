@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
-import { Coffee, Snowflake, Flame, TrendingDown, AlertTriangle, Ban, Sparkles, Info } from 'lucide-react';
+import { Info } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import {
   Tooltip,
@@ -17,7 +17,7 @@ interface MenuItem {
   name: string;
   description: string;
   price: string;
-  icon: React.ElementType;
+  image: string;
   tooltip: string;
   soldOut?: boolean;
   category: 'espresso' | 'cold' | 'specialty';
@@ -29,7 +29,7 @@ const menuItems: MenuItem[] = [
     name: 'Iced Copium',
     description: 'Cold comfort for long bear markets. Served over ice with a shot of denial.',
     price: '$6.50',
-    icon: Snowflake,
+    image: '/images/iced copium.png',
     tooltip: 'Best enjoyed while checking your portfolio',
     category: 'cold',
   },
@@ -38,7 +38,7 @@ const menuItems: MenuItem[] = [
     name: 'Rug Pull Roast',
     description: 'Dark, bitter, and impossible to forget. Just like that one project.',
     price: '$5.00',
-    icon: Flame,
+    image: '/images/rug pull roast.png',
     tooltip: 'Gone before you know it',
     category: 'espresso',
   },
@@ -47,7 +47,7 @@ const menuItems: MenuItem[] = [
     name: 'Leverage Latte',
     description: 'Smooth at first, dangerous after. 10x foam, liquidation risk.',
     price: '$7.00',
-    icon: AlertTriangle,
+    image: '/images/Leverage latte.png',
     tooltip: 'Not financial advice',
     category: 'specialty',
   },
@@ -56,7 +56,7 @@ const menuItems: MenuItem[] = [
     name: 'Capitulation Cappuccino',
     description: 'When you finally let go. Silky smooth surrender in every sip.',
     price: '$6.00',
-    icon: TrendingDown,
+    image: '/images/Capitulation Cappuccino.png',
     tooltip: 'The taste of acceptance',
     category: 'espresso',
   },
@@ -65,7 +65,7 @@ const menuItems: MenuItem[] = [
     name: 'HODL Hot Chocolate',
     description: 'Sweet, warm, and comforting. Diamond hands not required.',
     price: '$5.50',
-    icon: Sparkles,
+    image: '/images/hodl chocolat.png',
     tooltip: 'We never sell... the recipe',
     category: 'specialty',
   },
@@ -74,7 +74,7 @@ const menuItems: MenuItem[] = [
     name: 'FOMO Frappé',
     description: 'Blended cold brew with a hint of regret. Everyone else is ordering it.',
     price: '$7.50',
-    icon: Snowflake,
+    image: '/images/fomo frappe.png',
     tooltip: 'You don\'t want to miss this one',
     category: 'cold',
   },
@@ -83,7 +83,7 @@ const menuItems: MenuItem[] = [
     name: 'Pump & Dump Pour Over',
     description: 'Starts strong, ends quick. Single origin from "somewhere trustworthy."',
     price: '$6.00',
-    icon: Coffee,
+    image: '/images/pump dump run over.png',
     tooltip: 'Early adopters get the best sips',
     category: 'specialty',
   },
@@ -92,7 +92,7 @@ const menuItems: MenuItem[] = [
     name: 'Bull Run',
     description: 'The legendary seasonal blend. Golden, unstoppable, and full of promise.',
     price: '$99.00',
-    icon: Ban,
+    image: '/images/Bull run.png',
     tooltip: 'Check back next cycle',
     soldOut: true,
     category: 'specialty',
@@ -188,15 +188,16 @@ const Menu = () => {
                       </div>
                     )}
 
-                    {/* Icon */}
+                    {/* Image */}
                     <div className={cn(
-                      'w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-colors duration-300',
-                      item.soldOut ? 'bg-muted' : 'bg-secondary group-hover:bg-caramel/10'
+                      'w-12 h-12 rounded-xl overflow-hidden mb-4',
+                      item.soldOut && 'opacity-75'
                     )}>
-                      <item.icon className={cn(
-                        'w-6 h-6',
-                        item.soldOut ? 'text-muted-foreground' : 'text-caramel'
-                      )} />
+                      <img 
+                        src={item.image} 
+                        alt={item.name} 
+                        className="w-full h-full object-cover"
+                      />
                     </div>
 
                     {/* Content */}

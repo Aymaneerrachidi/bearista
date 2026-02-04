@@ -289,7 +289,7 @@ const Careers = () => {
               <p className="text-muted-foreground mb-6">
                 We're always looking for passionate people who've survived at least one market cycle.
               </p>
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" onClick={() => { setSelectedJob(null); setIsModalOpen(true); }}>
                 Send General Application
               </Button>
             </div>
@@ -299,11 +299,10 @@ const Careers = () => {
 
       <Footer />
 
-      {/* Application Modal */}
       <ApplicationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        jobTitle={selectedJob?.title || ''}
+        jobTitle={selectedJob?.title || 'General Application'}
       />
     </div>
   );

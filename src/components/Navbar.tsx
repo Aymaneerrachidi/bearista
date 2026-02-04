@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Coffee } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
@@ -43,14 +43,11 @@ const Navbar = () => {
         <Link
           to="/"
           className={cn(
-            'flex items-center gap-2 transition-colors duration-300',
+            'flex items-center transition-colors duration-300',
             showSolidNav ? 'text-primary' : 'text-primary-foreground'
           )}
         >
-          <Coffee className="w-8 h-8" />
-          <span className="font-comic text-2xl font-bold tracking-tight">
-            Bearista
-          </span>
+          <img src="/images/logo.PNG" alt="Bearista" className="h-12" />
         </Link>
 
         {/* Desktop Navigation */}
@@ -90,6 +87,34 @@ const Navbar = () => {
             );
           })}
         </nav>
+
+        {/* Social Icons */}
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="#"
+            className={cn(
+              'p-2 rounded-lg transition-colors duration-300',
+              showSolidNav
+                ? 'text-foreground/70 hover:text-primary hover:bg-secondary'
+                : 'text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10'
+            )}
+          >
+            <img src="/images/x logo.png" alt="X" className="w-5 h-5" />
+          </a>
+          <a
+            href="https://dexscreener.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              'p-2 rounded-lg transition-colors duration-300',
+              showSolidNav
+                ? 'text-foreground/70 hover:text-primary hover:bg-secondary'
+                : 'text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10'
+            )}
+          >
+            <img src="/images/dexscreener logo.png" alt="Dexscreener" className="w-5 h-5" />
+          </a>
+        </div>
 
         {/* CTA Button */}
         <div className="hidden md:block">
@@ -157,6 +182,25 @@ const Navbar = () => {
               </Link>
             );
           })}
+          {/* Social Icons Mobile */}
+          <div className="flex items-center gap-3 mt-4 px-4">
+            <a
+              href="#"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-foreground/80 hover:text-primary hover:bg-secondary rounded-lg transition-all duration-300"
+            >
+              <img src="/images/x logo.png" alt="X" className="w-5 h-5" />
+            </a>
+            <a
+              href="https://dexscreener.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="p-2 text-foreground/80 hover:text-primary hover:bg-secondary rounded-lg transition-all duration-300"
+            >
+              <img src="/images/dexscreener logo.png" alt="Dexscreener" className="w-5 h-5" />
+            </a>
+          </div>
           <Link to="/careers">
             <Button variant="cta" size="lg" className="mt-4 w-full">
               Start Your Journey

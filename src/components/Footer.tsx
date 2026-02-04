@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-coffee-dark text-primary-foreground py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div className="md:col-span-2">
             <a href="#" className="inline-flex items-center gap-2 mb-4">
@@ -17,28 +17,11 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-comic text-lg font-bold mb-4">Quick Links</h4>
-            <ul className="space-y-3">
-              {['About Us', 'Our Story', 'Menu', 'Careers', 'Contact'].map((link) => (
-                <li key={link}>
-                  <a
-                    href="#"
-                    className="text-primary-foreground/70 hover:text-caramel transition-colors duration-300"
-                  >
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Connect */}
           <div>
             <h4 className="font-comic text-lg font-bold mb-4">Connect</h4>
             <div className="flex gap-4">
-              {[Instagram, Twitter, Linkedin].map((Icon, index) => (
+              {[Instagram, Linkedin].map((Icon, index) => (
                 <a
                   key={index}
                   href="#"
@@ -58,9 +41,6 @@ const Footer = () => {
         <div className="pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-primary-foreground/50 text-sm">
             © 2026 Bearista. All rights reserved.
-          </p>
-          <p className="text-primary-foreground/50 text-sm flex items-center gap-1">
-            Made with <Heart className="w-4 h-4 text-caramel fill-caramel" /> by former crypto enthusiasts
           </p>
         </div>
       </div>
