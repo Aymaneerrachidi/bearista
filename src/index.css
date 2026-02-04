@@ -2,95 +2,113 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Bearista Brand Colors - Warm Coffee Palette */
+    --background: 30 25% 97%;
+    --foreground: 25 30% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 30 20% 99%;
+    --card-foreground: 25 30% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 30 20% 99%;
+    --popover-foreground: 25 30% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Rich espresso brown */
+    --primary: 25 45% 25%;
+    --primary-foreground: 30 25% 97%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Warm cream */
+    --secondary: 35 30% 92%;
+    --secondary-foreground: 25 30% 20%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Soft latte */
+    --muted: 30 20% 90%;
+    --muted-foreground: 25 15% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Warm amber accent */
+    --accent: 30 70% 50%;
+    --accent-foreground: 30 25% 97%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 30 20% 85%;
+    --input: 30 20% 85%;
+    --ring: 25 45% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Custom Bearista tokens */
+    --coffee-dark: 25 45% 18%;
+    --coffee-medium: 25 35% 30%;
+    --coffee-light: 30 25% 45%;
+    --cream: 35 40% 95%;
+    --caramel: 30 70% 50%;
+    --caramel-hover: 30 75% 45%;
+    --sage: 90 15% 35%;
+    --charcoal-warm: 25 10% 25%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(25 45% 18%) 0%, hsl(25 35% 30%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(30 20% 99%) 0%, hsl(35 30% 96%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(30 70% 50%) 0%, hsl(25 65% 45%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(25 30% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(25 30% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(25 30% 15% / 0.15);
+    --shadow-navbar: 0 4px 20px -4px hsl(25 30% 15% / 0.1);
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 25 30% 8%;
+    --foreground: 30 25% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 25 25% 12%;
+    --card-foreground: 30 25% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 25 25% 12%;
+    --popover-foreground: 30 25% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 30 70% 55%;
+    --primary-foreground: 25 30% 10%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 25 20% 18%;
+    --secondary-foreground: 30 25% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 25 15% 20%;
+    --muted-foreground: 30 15% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 30 65% 55%;
+    --accent-foreground: 25 30% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 30 70% 55%;
+
+    --coffee-dark: 30 25% 90%;
+    --coffee-medium: 30 20% 70%;
+    --coffee-light: 30 15% 55%;
+    --cream: 25 20% 15%;
+    --caramel: 30 65% 55%;
+    --caramel-hover: 30 70% 60%;
+    --sage: 90 10% 60%;
+    --charcoal-warm: 30 15% 80%;
   }
 }
 
@@ -100,6 +118,132 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  /* Comic Sans for headings - intentional and confident */
+  .font-comic {
+    font-family: 'Comic Sans MS', 'Comic Sans', cursive;
+  }
+
+  /* Premium body font */
+  .font-body {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  /* Navbar styles */
+  .navbar-transparent {
+    @apply bg-transparent backdrop-blur-none;
+  }
+
+  .navbar-solid {
+    @apply bg-background/95 backdrop-blur-md shadow-[var(--shadow-navbar)];
+  }
+
+  /* Hero section gradient overlay */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .card-hover:hover {
+    @apply -translate-y-1;
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* CTA button glow effect */
+  .cta-glow {
+    @apply relative overflow-hidden;
+    background: var(--gradient-cta);
+  }
+
+  .cta-glow::before {
+    content: '';
+    @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(135deg, hsl(30 75% 55%) 0%, hsl(25 70% 50%) 100%);
+  }
+
+  .cta-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* Timeline connector line */
+  .timeline-line {
+    @apply absolute left-1/2 top-0 bottom-0 w-0.5 -translate-x-1/2;
+    background: linear-gradient(180deg, hsl(var(--caramel)) 0%, hsl(var(--coffee-medium)) 100%);
+  }
+
+  /* Nav link underline animation */
+  .nav-link-underline {
+    @apply relative;
+  }
+
+  .nav-link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 h-0.5 w-0 bg-current transition-all duration-300 ease-out;
+  }
+
+  .nav-link-underline:hover::after {
+    @apply w-full;
+  }
+}
+
+@layer utilities {
+  /* Text colors using design tokens */
+  .text-coffee-dark {
+    color: hsl(var(--coffee-dark));
+  }
+
+  .text-coffee-medium {
+    color: hsl(var(--coffee-medium));
+  }
+
+  .text-coffee-light {
+    color: hsl(var(--coffee-light));
+  }
+
+  .text-sage {
+    color: hsl(var(--sage));
+  }
+
+  .text-charcoal {
+    color: hsl(var(--charcoal-warm));
+  }
+
+  .text-caramel {
+    color: hsl(var(--caramel));
+  }
+
+  /* Background colors using design tokens */
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+
+  .bg-coffee-dark {
+    background-color: hsl(var(--coffee-dark));
+  }
+
+  .bg-caramel {
+    background-color: hsl(var(--caramel));
+  }
+
+  /* Gradient backgrounds */
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .bg-gradient-cta {
+    background: var(--gradient-cta);
   }
 }
