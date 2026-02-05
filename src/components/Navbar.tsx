@@ -91,7 +91,9 @@ const Navbar = () => {
         {/* Social Icons */}
         <div className="hidden md:flex items-center gap-3">
           <a
-            href="#"
+            href="https://x.com/i/communities/2019223482295320780"
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               'p-2 rounded-lg transition-colors duration-300',
               showSolidNav
@@ -185,7 +187,9 @@ const Navbar = () => {
           {/* Social Icons Mobile */}
           <div className="flex items-center gap-3 mt-4 px-4">
             <a
-              href="#"
+              href="https://x.com/i/communities/2019223482295320780"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setIsMobileMenuOpen(false)}
               className="p-2 text-foreground/80 hover:text-primary hover:bg-secondary rounded-lg transition-all duration-300"
             >
